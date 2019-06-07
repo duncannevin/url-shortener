@@ -1,4 +1,4 @@
-package entities
+package com.duncannevin.drnurlshortener.entities
 
 import akka.http.scaladsl.model.{StatusCode, StatusCodes}
 

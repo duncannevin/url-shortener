@@ -1,4 +1,4 @@
-package entities
+package com.duncannevin.drnurlshortener.entities
 
 object Shortened {
   def apply(createShorten: CreateShorten): Shortened = {

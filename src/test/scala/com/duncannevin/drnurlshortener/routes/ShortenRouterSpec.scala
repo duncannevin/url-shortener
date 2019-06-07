@@ -1,10 +1,10 @@
-package routes
+package com.duncannevin.drnurlshortener.routes
 
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import entities.{CreateShorten, Shortened}
+import com.duncannevin.drnurlshortener.entities.{CreateShorten, Shortened}
 import org.scalatest.{BeforeAndAfterEach, Matchers, WordSpec}
-import repository.ShortenRepository
+import com.duncannevin.drnurlshortener.repository.ShortenRepository
 
 import scala.concurrent.Await
 import scala.concurrent.duration.FiniteDuration

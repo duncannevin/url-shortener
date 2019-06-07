@@ -1,4 +1,4 @@
-package validation
+package com.duncannevin.drnurlshortener.validation
 
 trait utils {
   def isValidEmail(email: String): Boolean =

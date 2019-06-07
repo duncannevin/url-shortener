@@ -1,4 +1,4 @@
-package logging
+package com.duncannevin.drnurlshortener.logging
 
 import org.apache.logging.log4j.scala.Logging
 

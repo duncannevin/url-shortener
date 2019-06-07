@@ -1,4 +1,4 @@
-package repository
+package com.duncannevin.drnurlshortener.repository
 
 import scala.concurrent.Future
 

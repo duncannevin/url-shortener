@@ -1,4 +1,4 @@
-package entities
+package com.duncannevin.drnurlshortener.entities
 
 case class CreateShorten(url: String) {
   def hashed: String = {

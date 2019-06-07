@@ -1,7 +1,7 @@
-package repository
+package com.duncannevin.drnurlshortener.repository
 
 import akka.http.scaladsl.util.FastFuture
-import entities.Shortened
+import com.duncannevin.drnurlshortener.entities.Shortened
 
 import scala.concurrent.Future
 

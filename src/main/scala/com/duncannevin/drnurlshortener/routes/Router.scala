@@ -1,4 +1,4 @@
-package routes
+package com.duncannevin.drnurlshortener.routes
 
 import akka.http.scaladsl.server.Route
 

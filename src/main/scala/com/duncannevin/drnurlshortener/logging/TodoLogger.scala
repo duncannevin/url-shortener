@@ -1,4 +1,4 @@
-package logging
+package com.duncannevin.drnurlshortener.logging
 
 trait TodoLogger extends Logger {
   def serverListening(port: Int): Unit = logger.info(s"Listening on port: $port")

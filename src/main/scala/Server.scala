@@ -5,7 +5,7 @@ import akka.http.scaladsl.Http
 import akka.http.scaladsl.model.{HttpRequest, HttpResponse}
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.Flow
-import routes.Router
+import com.duncannevin.drnurlshortener.routes.Router
 
 import scala.concurrent.{ExecutionContext, Future}
 

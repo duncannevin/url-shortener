@@ -5,10 +5,10 @@ import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.Flow
-import entities.Shortened
-import logging.TodoLogger
-import repository.{ShortenRepository, ShortenedRepository}
-import routes.{Router, ShortenRouter}
+import com.duncannevin.drnurlshortener.entities.Shortened
+import com.duncannevin.drnurlshortener.logging.TodoLogger
+import com.duncannevin.drnurlshortener.repository.{ShortenRepository, ShortenedRepository}
+import com.duncannevin.drnurlshortener.routes.{Router, ShortenRouter}
 
 import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global

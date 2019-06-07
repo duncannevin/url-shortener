@@ -1,11 +1,11 @@
 enablePlugins(JavaAppPackaging, AshScriptPlugin)
 
-name := "akkahttp-quickstart"
+name := "drnurlshortener"
 
 version := "0.1"
 
 dockerBaseImage := "openjdk:8-jre-alpine"
-packageName in Docker := "akkahttp-quickstart"
+packageName in Docker := "drnurlshortener"
 
 val akkaVersion = "2.5.13"
 val akkaHttpVersion = "10.1.3"
@@ -43,3 +43,5 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "5.1.34",
   "com.h2database" % "h2" % "1.4.199" % Test
 )
+
+mainClass in Global := Some("com.duncannevin.drnurlshortener.Main")

@@ -1,9 +1,9 @@
-package directives
+package com.duncannevin.drnurlshortener.directives
 
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives
 import akka.http.scaladsl.testkit.ScalatestRouteTest
-import entities.{ApiError, ApiSuccess, ErrorData}
+import com.duncannevin.drnurlshortener.entities.{ApiError, ApiSuccess, ErrorData}
 import org.scalatest.{Matchers, WordSpec}
 
 import scala.concurrent.Future
@@ -61,7 +61,7 @@ class CustomDirectivesSpec extends WordSpec with Matchers with ScalatestRouteTes
     }
   }
 
-  "directives.TodoDirectives" should {
+  "CustomDirectives" should {
     "not return an error if the future succeeds [handle]" in {
       Get("/test/success/handle") ~> testRoute ~> check {
         status shouldBe StatusCodes.OK

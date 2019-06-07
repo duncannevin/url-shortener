@@ -1,6 +1,6 @@
-package validation
+package com.duncannevin.drnurlshortener.validation
 
-import entities.{ApiError, CreateShorten}
+import com.duncannevin.drnurlshortener.entities.{ApiError, CreateShorten}
 
 object CreateShortenValidator extends Validator[CreateShorten] {
   // todo -> write function for validating url

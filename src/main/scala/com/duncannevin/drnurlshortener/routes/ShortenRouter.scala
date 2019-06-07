@@ -1,11 +1,11 @@
-package routes
+package com.duncannevin.drnurlshortener.routes
 
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.{Directives, Route}
-import directives.{CustomDirectives, ValidatorDirectives}
-import entities.{ApiSuccess, CreateShorten, Shortened}
-import repository.ShortenedRepository
-import validation.CreateShortenValidator
+import com.duncannevin.drnurlshortener.directives.{CustomDirectives, ValidatorDirectives}
+import com.duncannevin.drnurlshortener.entities.{ApiSuccess, CreateShorten, Shortened}
+import com.duncannevin.drnurlshortener.repository.ShortenedRepository
+import com.duncannevin.drnurlshortener.validation.CreateShortenValidator
 
 class ShortenRouter(repository: ShortenedRepository[Shortened]) extends Router with Directives with CustomDirectives with ValidatorDirectives {
   import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport._

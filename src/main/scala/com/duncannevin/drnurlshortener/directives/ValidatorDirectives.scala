@@ -1,7 +1,7 @@
-package directives
+package com.duncannevin.drnurlshortener.directives
 
 import akka.http.scaladsl.server.{Directive0, Directives}
-import validation.Validator
+import com.duncannevin.drnurlshortener.validation.Validator
 
 trait ValidatorDirectives extends Directives {
   import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport._

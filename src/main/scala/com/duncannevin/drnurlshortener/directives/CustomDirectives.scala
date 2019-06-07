@@ -1,7 +1,7 @@
-package directives
+package com.duncannevin.drnurlshortener.directives
 
 import akka.http.scaladsl.server.{Directive1, Directives}
-import entities.{ApiError, ApiSuccess}
+import com.duncannevin.drnurlshortener.entities.{ApiError, ApiSuccess}
 
 import scala.concurrent.Future
 import scala.util.{Failure, Success}
