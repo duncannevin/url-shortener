@@ -5,9 +5,10 @@ import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.Flow
+import com.duncannevin.drnurlshortener.db.DbConfig
 import com.duncannevin.drnurlshortener.entities.Shortened
-import com.duncannevin.drnurlshortener.logging.TodoLogger
-import com.duncannevin.drnurlshortener.repository.{ShortenRepository, ShortenedRepository}
+import com.duncannevin.drnurlshortener.logging.ShortenLogger
+import com.duncannevin.drnurlshortener.repository.{Repository, ShortenRepository}
 import com.duncannevin.drnurlshortener.routes.{Router, ShortenRouter}
 
 import scala.concurrent.Await
@@ -15,14 +16,14 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.FiniteDuration
 import scala.util.{Failure, Success}
 
-object Main extends App with TodoLogger {
+object Main extends App with ShortenLogger with DbConfig {
   val host = "0.0.0.0"
   val port = 9000
 
   implicit val system: ActorSystem = ActorSystem(name = "todo-api")
   implicit val materializer: ActorMaterializer = ActorMaterializer()
 
-  val shortenRepository: ShortenedRepository[Shortened] = new ShortenRepository
+  val shortenRepository: Repository[Shortened] = new ShortenRepository(mongoDb)
   val shortenRouter: Router = new ShortenRouter(shortenRepository)
 
   lazy val routes: Route = Seq(shortenRouter).foldRight[Route](reject) {

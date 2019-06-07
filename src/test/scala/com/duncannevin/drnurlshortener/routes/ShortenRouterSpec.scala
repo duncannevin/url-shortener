@@ -3,8 +3,8 @@ package com.duncannevin.drnurlshortener.routes
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.testkit.ScalatestRouteTest
 import com.duncannevin.drnurlshortener.entities.{CreateShorten, Shortened}
+import com.duncannevin.drnurlshortener.repository.MockShortenRepository
 import org.scalatest.{BeforeAndAfterEach, Matchers, WordSpec}
-import com.duncannevin.drnurlshortener.repository.ShortenRepository
 
 import scala.concurrent.Await
 import scala.concurrent.duration.FiniteDuration
@@ -13,7 +13,7 @@ class ShortenRouterSpec extends WordSpec with Matchers with ScalatestRouteTest w
   import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport._
   import io.circe.generic.auto._
 
-  private val repository = new ShortenRepository()
+  private val repository = new MockShortenRepository
   private val router = new ShortenRouter(repository)
 
   val timeout = FiniteDuration(500, "milliseconds")
@@ -22,7 +22,7 @@ class ShortenRouterSpec extends WordSpec with Matchers with ScalatestRouteTest w
   var testHash = ""
 
   override def beforeAll(): Unit = {
-    testHash = Await.result(repository.save(Shortened(createShorten2)), timeout).get.hash
+    testHash = Await.result(repository.findOrCreate(Shortened(createShorten2)), timeout).hash
   }
 
   "A ShortenRouter" should {

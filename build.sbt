@@ -12,6 +12,7 @@ val akkaHttpVersion = "10.1.3"
 val circeVersion = "0.9.3"
 val apacheLogVersion = "2.11.0"
 val slickVersion = "3.3.0"
+val mongoDriverVersion = "2.4.0"
 
 resolvers += Resolver.bintrayRepo("hseeberger", "maven")
 
@@ -41,7 +42,9 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-nop" % "1.6.4",
   "com.typesafe.slick" %% "slick-hikaricp" % slickVersion,
   "mysql" % "mysql-connector-java" % "5.1.34",
-  "com.h2database" % "h2" % "1.4.199" % Test
+  "com.h2database" % "h2" % "1.4.199" % Test,
+
+  "org.mongodb.scala" %% "mongo-scala-driver" % mongoDriverVersion
 )
 
 mainClass in Global := Some("com.duncannevin.drnurlshortener.Main")
