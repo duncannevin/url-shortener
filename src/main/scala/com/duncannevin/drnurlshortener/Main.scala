@@ -1,3 +1,6 @@
+package com.duncannevin.drnurlshortener
+
+import akka.http.scaladsl.server.Directives.reject
 import akka.NotUsed
 import akka.actor.ActorSystem
 import akka.http.scaladsl.model.{HttpRequest, HttpResponse}
@@ -15,6 +18,7 @@ import scala.concurrent.Await
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.FiniteDuration
 import scala.util.{Failure, Success}
+
 
 object Main extends App with ShortenLogger with DbConfig {
   val host = "0.0.0.0"
